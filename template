@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <p>Hi <?= Name ?> </p>
+    <p>You have <?= count ?> items to approve. Please find the sheet < Link to the sheet > here</a></p>
+    Thanks
+
+  </body>
+</html>
