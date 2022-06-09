@@ -1,0 +1,72 @@
+/*function approvalMail() {
+  var emailtemp = HtmlService.createTemplateFromFile("Approval_mail")
+  var excel_sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Approval Sheet");
+  var excel_data = excel_sheet.getRange("A2:M"+excel_sheet.getLastRow()).getValues();
+  excel_data = excel_data.filter( function(r){return (r[11] == false && r[12] != "Sent" )});
+  Logger.log(excel_data);
+  var User1_count = 0;
+  var User2_count=0;
+  var User3_count = 0;
+  var User4_count = 0;
+  excel_data.forEach(function(row){
+    if(row[10]=="User1"){
+     User1_count++;
+     excel_sheet.getRange("M"+row[0]).setValue("Sent"); 
+     }
+    else if(row[10]=="User2"){
+     User2_count++;
+     excel_sheet.getRange("M"+row[0]).setValue("Sent");}
+    else if(row[10]=="User3"){
+     User3_count++;
+     excel_sheet.getRange("M"+row[0]).setValue("Sent");}
+    else if(row[10]=="User4"){
+     User4_count++;
+     excel_sheet.getRange("M"+row[0]).setValue("Sent");}
+    
+  })
+  
+  
+  if(User1_count>0){
+    emailtemp.Name = "User1"
+    emailtemp.count = User1_count
+  var htmlMessage = emailtemp.evaluate().getContent();
+    GmailApp.sendEmail("User1@pwc.com","Approval","Your email does not support html.",{
+      htmlBody: htmlMessage,
+      cc: "xyz@pwc.com"
+    })
+      }
+    if(User2_count>0){
+      emailtemp.Name = "User2"
+      emailtemp.count = User2_count
+        var htmlMessage = emailtemp.evaluate().getContent();
+    GmailApp.sendEmail("User2@pwc.com","Approval","Your email does not support html.",{
+      htmlBody: htmlMessage,
+      cc: "xyz@pwc.com"
+    })
+    }
+    if(User3_count>0){
+      emailtemp.Name = "User3"
+      emailtemp.count =User3_count
+  var htmlMessage = emailtemp.evaluate().getContent();
+    GmailApp.sendEmail("User3@pwc.com","Approval","Your email does not support html.",{
+      htmlBody: htmlMessage,
+      cc: "xyz@pwc.com"
+    })
+    }
+    if(User4_count>0){
+      emailtemp.Name = "User4"
+      emailtemp.count = User4_count
+  var htmlMessage = emailtemp.evaluate().getContent();
+    GmailApp.sendEmail("User4@pwc.com","Approval","Your email does not support html.",{
+      htmlBody: htmlMessage,
+      cc: "xyz@pwc.com"
+    })
+    }
+  
+
+}
+
+function onOpen(){
+  let ui = SpreadsheetApp.getUi();
+  ui.createMenu('Custom User3').addItem('Send Mail','approvalMail').addToUi();
+}*/
